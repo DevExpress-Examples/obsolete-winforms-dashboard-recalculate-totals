@@ -1,8 +1,8 @@
 # Dashboard for WinForms - How to Recalculate Totals when You Filter a Grid
 
-The Dashboard does not fully support Grid column filters out of the box. These filters can only be used to select which data to show in the Grid item and they do not affect Total values calculated by the dashboard data engine. As a result, the Grid item shows filtered data when you apply grid column filters, but Totals are unchanged.
+The Dashboard does not fully support Grid column filters out of the box. These filters is used to select the data displayed in the Grid item. However, column filters do not affect total values calculated by the dashboard data engine. As a result, the Grid item shows filtered data when you apply grid column filters, but does not recalculate totals.
 
-The example shows how to recalculate totals when when you apply column filters to the Grid dashboard item.
+The example shows how to recalculate totals when you apply column filters to the Grid dashboard item.
 
 > The example supports all the dashboard's [Total types](https://docs.devexpress.com/Dashboard/114794/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid/totals#totals-overview) except for "Auto". If you apply the "Auto" total type in the dashboard, "Not Supported" is shown instead of the total value.
 
@@ -10,17 +10,23 @@ The example shows how to recalculate totals when when you apply column filters t
 
 ### RecalculateGridTotalsModule
 
-Implements the required functionality to recalculate Grid totals. The [DashboardViewer.DashboardItemControlUpdated](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.DashboardItemControlUpdated) event allows you to access the underlying `GridControl` object and change its options. The `GridView` column's [Summary](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Columns.GridColumn.Summary) is used to modify column totals in the underlying UI control.
+Implements the functionality to recalculate Grid totals. The [DashboardViewer.DashboardItemControlUpdated](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.DashboardItemControlUpdated) event allows you to access the underlying `GridControl` object and change its options. The `GridView` column's [Summary](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Columns.GridColumn.Summary) is used to modify column totals in the underlying UI control.
 
-The example also modifies Total values when you export data. The [DashboardViewer.CustomExport](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.CustomExport) event handler overrides the export procedure.
+The example also updates total values when you export data. The [DashboardViewer.CustomExport](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.CustomExport) event handler overrides the export procedure.
 
-The module has the `Attach` and `Detach` public methods that allow you attach/detach it to/from your `Dashboard Designer` or `Dashboard Viewer` controls.
+The module has the `Attach` and `Detach` public methods that allow you to execute the binding and unbinding code. 
 
-### Helper classes
+* `Attach`
+    Attaches the `Dashboard Designer` or `Dashboard Viewer` control and subscribe the `DashboardItemControlUpdated` and `CustomExport` events.
 
-* `DashboardTotalsHelper` is implemenented to get the underlying Grid Control's total type based on the Dashboard Grid item's total type.
+* `Detach`
+    Detaches the `Dashboard Designer` or `Dashboard Viewer` control and unsubscribe the `DashboardItemControlUpdated` and `CustomExport` events
 
-* `FormatHelper` allows you to format values using the dashboard's data items formatting settings. 
+### Helper Classes
+
+* `DashboardTotalsHelper` gets the total type of the underlying Grid Control based on the total type of the Dashboard Grid item.
+
+* `FormatHelper` uses the formatting settings of dashboard's data items to format total values. 
 
 <!-- default file list -->
 ## Files to Look At
