@@ -28,9 +28,11 @@ The example also updates total values when you export data. The [DashboardViewer
 The module has the `Attach` and `Detach` public methods that allow you to execute the binding and unbinding code. 
 
 * `Attach`
+
     Attaches the `Dashboard Designer` or `Dashboard Viewer` control and subscribes the [DashboardItemControlUpdated](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.IDashboardControl.DashboardItemControlUpdated) and [CustomExport](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.IDashboardControl.CustomExport) events.
 
 * `Detach`
+
     Detaches the `Dashboard Designer` or `Dashboard Viewer` control and unsubscribes the `DashboardItemControlUpdated` and `CustomExport` events
 
 ### Helper Classes
