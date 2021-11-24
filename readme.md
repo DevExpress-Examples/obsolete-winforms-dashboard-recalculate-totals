@@ -33,7 +33,7 @@ The module has the `Attach` and `Detach` public methods that allow you to execut
 
 * `Detach`
 
-    Detaches the `Dashboard Designer` or `Dashboard Viewer` control and unsubscribes the `DashboardItemControlUpdated` and `CustomExport` events
+    Detaches the `Dashboard Designer` or `Dashboard Viewer` control and unsubscribes the `DashboardItemControlUpdated` and `CustomExport` events.
 
 ### Helper Classes
 
