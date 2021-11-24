@@ -56,3 +56,7 @@ The module has the `Attach` and `Detach` public methods that allow you to execut
 
 * [Totals](https://docs.devexpress.com/Dashboard/114794/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid/totals)
 * [Access to Underlying Controls](https://docs.devexpress.com/Dashboard/18019/winforms-dashboard/winforms-viewer/access-to-underlying-controls)
+
+## More Exmples
+
+- [Dashboard for ASP.NET Core - How to Recalculate Totals when You Filter a Grid](https://github.com/DevExpress-Examples/asp-net-core-dashboard-recalculate-totals)
