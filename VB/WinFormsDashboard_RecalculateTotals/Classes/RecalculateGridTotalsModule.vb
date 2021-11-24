@@ -61,7 +61,7 @@ Namespace WinFormsDashboard_RecalculateTotals
                 If gridDashboardColumn IsNot Nothing Then
                     Dim dataItemName = column.FieldName
                     Dim dataItemDescriptor As Object = Nothing
-                    dataItemDescriptor = If(itemData.GetMeasures().FirstOrDefault(Function(m) Equals(m.ID, dataItemName)), dataItemDescriptor)
+                    dataItemDescriptor = itemData.GetMeasures().FirstOrDefault(Function(m) Equals(m.ID, dataItemName))
                     dataItemDescriptor = If(itemData.GetDimensions(DashboardDataAxisNames.DefaultAxis).FirstOrDefault(Function(d) Equals(d.ID, dataItemName)), dataItemDescriptor)
                     If dataItemDescriptor IsNot Nothing Then
                         UpdateColumnSummaryItemText(gridDashboardColumn, column, dataItemDescriptor)
