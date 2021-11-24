@@ -60,7 +60,7 @@ namespace WinFormsDashboard_RecalculateTotals {
                 if (gridDashboardColumn != null) {
                     var dataItemName = column.FieldName;
                     object dataItemDescriptor = null;
-                    dataItemDescriptor = itemData.GetMeasures().FirstOrDefault(m => m.ID == dataItemName) ?? dataItemDescriptor;
+                    dataItemDescriptor = itemData.GetMeasures().FirstOrDefault(m => m.ID == dataItemName);
                     dataItemDescriptor = itemData.GetDimensions(DashboardDataAxisNames.DefaultAxis).FirstOrDefault(d => d.ID == dataItemName) ?? dataItemDescriptor;
                     if (dataItemDescriptor != null) {
                         UpdateColumnSummaryItemText(gridDashboardColumn, column, dataItemDescriptor);
