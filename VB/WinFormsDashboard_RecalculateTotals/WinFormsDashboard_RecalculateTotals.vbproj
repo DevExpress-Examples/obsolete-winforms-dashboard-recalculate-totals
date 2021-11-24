@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
@@ -8,7 +9,8 @@
     <ProjectGuid>{5E00A518-1110-4909-816C-F1BFEA2BED0C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>T1016392</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>T1016392</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -19,7 +21,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG,TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -82,34 +84,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DashboardTotalsHelper.cs" />
-    <Compile Include="Classes\FormatHelper.cs" />
-    <Compile Include="Classes\RecalculateGridTotalsModule.cs" />
-    <Compile Include="DesignerForm1.cs">
+    <Compile Include="Classes\DashboardTotalsHelper.vb" />
+    <Compile Include="Classes\FormatHelper.vb" />
+    <Compile Include="Classes\RecalculateGridTotalsModule.vb" />
+    <Compile Include="DesignerForm1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DesignerForm1.Designer.cs">
-      <DependentUpon>DesignerForm1.cs</DependentUpon>
+    <Compile Include="DesignerForm1.Designer.vb">
+      <DependentUpon>DesignerForm1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.vb" />
+    <Compile Include="Properties\AssemblyInfo.vb" />
     <EmbeddedResource Include="DesignerForm1.resx">
-      <DependentUpon>DesignerForm1.cs</DependentUpon>
+      <DependentUpon>DesignerForm1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <CustomToolNamespace>T1016392.Properties</CustomToolNamespace>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
+    <Compile Include="Properties\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -126,7 +129,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
