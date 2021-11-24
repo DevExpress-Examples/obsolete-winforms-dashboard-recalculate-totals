@@ -6,24 +6,16 @@ The example shows how to recalculate totals when you apply column filters to the
 
 > The example supports all the dashboard's [Total types](https://docs.devexpress.com/Dashboard/114794/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid/totals#totals-overview) except for "Auto". If you apply the "Auto" total type in the dashboard, "Not Supported" is shown instead of the total value.
 
-<!-- default file list -->
-## Files to Look At
 
-* [RecalculateGridTotalsModule.cs](./CS/WinFormsDashboard_RecalculateTotals/Classes/RecalculateGridTotalsModule.cs) (VB: [RecalculateGridTotalsModule.vb](./VB/WinFormsDashboard_RecalculateTotals/Classes/RecalculateGridTotalsModule.vb))
-* [DashboardTotalsHelper.cs](./CS/WinFormsDashboard_RecalculateTotals/Classes/DashboardTotalsHelper.cs) (VB: [DashboardTotalsHelper.vb](./VB/WinFormsDashboard_RecalculateTotals/Classes/DashboardTotalsHelper.vb))
-* [FormatHelper.cs](./CS/WinFormsDashboard_RecalculateTotals/Classes/FormatHelper.cs) (VB: [FormatHelper.vb](./VB/WinFormsDashboard_RecalculateTotals/Classes/FormatHelper.vb))
-* [DesignerForm1.cs](./CS/WinFormsDashboard_RecalculateTotals/DesignerForm1.cs) (VB: [DesignerForm1.vb](./VB/WinFormsDashboard_RecalculateTotals/DesignerForm1.vb))
-
-<!-- default file list end -->
 ## Example Overview
 
 The example consists of the following classes:
 
 ### RecalculateGridTotalsModule
 
-Implements the functionality to recalculate Grid totals. The [DashboardViewer.DashboardItemControlUpdated](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.DashboardItemControlUpdated) event allows you to access the underlying `GridControl` object and change its options. The `GridView` column's [Summary](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Columns.GridColumn.Summary) is used to modify column totals in the underlying UI control.
+Implements the functionality to recalculate Grid totals. The [DashboardItemControlUpdated](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.IDashboardControl.DashboardItemControlUpdated) event allows you to access the underlying `GridControl` object and change its options. The `GridView` column's [Summary](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Columns.GridColumn.Summary) is used to modify column totals in the underlying UI control.
 
-The example also updates total values when you export data. The [DashboardViewer.CustomExport](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.CustomExport) event handler overrides the export procedure.
+The example also updates total values when you export data. The [CustomExport](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.IDashboardControl.CustomExport) event handler overrides the export procedure.
 
 The module has the `Attach` and `Detach` public methods that allow you to execute the binding and unbinding code. 
 
@@ -45,7 +37,15 @@ The module has the `Attach` and `Detach` public methods that allow you to execut
 
     Uses the formatting settings of dashboard's data items to format total values. 
 
+<!-- default file list -->
+## Files to Look At
 
+* [RecalculateGridTotalsModule.cs](./CS/WinFormsDashboard_RecalculateTotals/Classes/RecalculateGridTotalsModule.cs) (VB: [RecalculateGridTotalsModule.vb](./VB/WinFormsDashboard_RecalculateTotals/Classes/RecalculateGridTotalsModule.vb))
+* [DashboardTotalsHelper.cs](./CS/WinFormsDashboard_RecalculateTotals/Classes/DashboardTotalsHelper.cs) (VB: [DashboardTotalsHelper.vb](./VB/WinFormsDashboard_RecalculateTotals/Classes/DashboardTotalsHelper.vb))
+* [FormatHelper.cs](./CS/WinFormsDashboard_RecalculateTotals/Classes/FormatHelper.cs) (VB: [FormatHelper.vb](./VB/WinFormsDashboard_RecalculateTotals/Classes/FormatHelper.vb))
+* [DesignerForm1.cs](./CS/WinFormsDashboard_RecalculateTotals/DesignerForm1.cs) (VB: [DesignerForm1.vb](./VB/WinFormsDashboard_RecalculateTotals/DesignerForm1.vb))
+
+<!-- default file list end -->
 
 ## Documentation
 
