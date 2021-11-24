@@ -1,4 +1,4 @@
-# Dashboard for WinForms - How to Recalculate Totals when You Filter a Grid
+# Dashboard for WinForms - How to Recalculate Totals When You Filter a Grid
 
 The Dashboard does not fully support Grid column filters out of the box. These filters are used to select the data displayed in the Grid item. However, column filters do not affect total values calculated by the dashboard data engine. As a result, the Grid item shows filtered data when you apply grid column filters, but does not recalculate totals.
 
